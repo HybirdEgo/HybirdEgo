@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/joeengo/exploiting/main/EngoUILIB_V2.lua", true))()
 
-local main = library:CreateMain("Hybird.Ego Vault Set By YoltW#1051", "", Enum.KeyCode.LeftAlt)
+local main = library:CreateMain("Hybird.Ego Vault Set By YoltW#1051", "Keybind:Insert, That Was The Gui With Hybird.Ego Streamable Set by Me (so cant change the setting)", Enum.KeyCode.Insert)
 
 local tab = main:CreateTab("Slient Tab")
 
@@ -10,7 +10,7 @@ tab:CreateToggle("Toggle", function(value)
 --["LuarmorKey"] = "YoltWTestKey",
 getgenv().Hybird = {
     General = {
-        Notifications = true,
+        Notifications = false,
         Intro = true, 
         FOVMode = "PredictionPoint"
     },
@@ -36,7 +36,7 @@ getgenv().Hybird = {
             Key = "C",
             UnlockKey = "Z",
             SmoothLock = true,
-            Smoothness = 0.0292,
+            Smoothness = 0.00516,
             PredictMovement = true,
             Prediction = 0.112,
             Shake = false,
@@ -838,5 +838,24 @@ local tab = main:CreateTab("Credit")
 tab:CreateLabel("Esea2, YoltW, Nonox, Mathi")
 
 tab:CreateToggle("NVTH", function(value)
-   
+ local function callback(Text)
+ if Text == "Button1 text" then
+  print ("Answer")
+elseif Text == ("Button2 text") then
+ print ("Answer2")
+ end
+end
+
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+--
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "Hybird.Ego V4 thank you to use";
+ Text = "Hybird";
+ Icon = "";
+ Duration = 5;
+ Button1 = "thanks;
+ Button2 = "for use that";
+ Callback = NotificationBindable;
+})
 end);
